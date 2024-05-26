@@ -33,7 +33,6 @@ public class InterpreteController {
         }
     }
 
-
     @GetMapping(value = "/interprete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getInterpreteById(@PathVariable Long id) throws ExternalComunicationErrorException {
         try {
@@ -74,7 +73,6 @@ public class InterpreteController {
     public ResponseEntity<?> newInterprete(@RequestBody InterpreteRequest request) throws ExternalComunicationErrorException {
         try {
             Interprete interprete = new Interprete(null, request.getNome(), request.getCognome(), null);
-
 
             return new ResponseEntity<>(interpreteBusiness.saveInterprete(interprete), HttpStatus.CREATED);
         } catch (IllegalArgumentException e) {

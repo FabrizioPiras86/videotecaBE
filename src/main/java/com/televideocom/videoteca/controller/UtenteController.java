@@ -130,8 +130,7 @@ public class UtenteController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UtenteRegistrazione utente) {
         if (utente != null) {
-            // Assuming utenteBusiness.test(utente) returns some kind of response object
-            return new ResponseEntity<>(utenteBusiness.test(utente), HttpStatus.OK);
+            return new ResponseEntity<>(utenteBusiness.getLogin(utente), HttpStatus.OK);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
         }

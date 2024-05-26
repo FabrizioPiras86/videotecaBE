@@ -29,7 +29,7 @@ public class FilmBusiness {
     private InterpreteServiceInterfaccia interpreteServiceInterfaccia;
 
 
-    public int getNumeroTotaleFilm() throws ExternalComunicationErrorException {
+    public int getTotalNumberOfMovies() throws ExternalComunicationErrorException {
         try {
             List<Film> filmList = filmServiceInterfaccia.getFindAll();
             return filmList.size();
@@ -293,7 +293,6 @@ public class FilmBusiness {
         }
     }
 
-
     public FilmDeleteResponsePOJO deleteFilm(Long id) throws ExternalComunicationErrorException {
         try {
             Optional<Film> filmOptional = filmServiceInterfaccia.getFindById(id);
@@ -319,8 +318,6 @@ public class FilmBusiness {
             throw new ExternalComunicationErrorException("Errore durante l'eliminazione del film", e);
         }
     }
-
-
 
     public FilmInterpreteUpdateResponsePOJO aggiungiAttoreFilm(Long id_film, Long id_interprete) throws ExternalComunicationErrorException {
         try {

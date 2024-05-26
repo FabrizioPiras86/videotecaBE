@@ -24,8 +24,6 @@ public class GeneriBusiness {
         }
     }
 
-
-
     public Optional<Genere> getFindById(Long id) {
         return genereServiceInterfaccia.getFindById(id);
     }

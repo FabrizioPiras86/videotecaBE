@@ -26,7 +26,7 @@ public class FilmController {
     @GetMapping(value = "/numeroTotaleFilm", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getNumeroTotaleFilm() {
         try {
-            int numeroTotaleFilm = filmBusiness.getNumeroTotaleFilm();
+            int numeroTotaleFilm = filmBusiness.getTotalNumberOfMovies();
             return ResponseEntity.ok(numeroTotaleFilm);
         } catch (ExternalComunicationErrorException e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Errore durante il recupero del numero totale di film", e);

@@ -24,7 +24,6 @@ public class InterpreteBusiness {
         }
     }
 
-
     public List<Interprete> findAllInterpreti() {
 
         return interpreteServiceInterfaccia.getFindAll();

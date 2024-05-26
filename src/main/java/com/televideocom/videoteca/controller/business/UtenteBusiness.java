@@ -27,7 +27,6 @@ public class UtenteBusiness {
         }
     }
 
-
     public Utente getFindByEmail(String email) {
         return utenteServiceInterfaccia.getFindByEmail(email);
     }
@@ -114,7 +113,7 @@ public class UtenteBusiness {
         ));
     }
 
-    public Object test(UtenteRegistrazione utente) {
+    public Object getLogin(UtenteRegistrazione utente) {
         Utente user =  utenteServiceInterfaccia.getFindByUsername(utente.getUsername());
         String token = UUID.randomUUID().toString();
         record r(String token, String username, Long auth) {}
