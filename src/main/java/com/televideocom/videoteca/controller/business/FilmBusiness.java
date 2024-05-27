@@ -87,13 +87,14 @@ public class FilmBusiness {
                             film.getTitolo(),
                             film.getAnno(),
                             film.getGenere().getDescrizione(),
-                            film.getLikedInterprete().stream().map(Interprete::getNome).collect(Collectors.toList())))
+                            film.getLikedInterprete().stream().map(interprete -> interprete.getNome() + " " + interprete.getCognome()).collect(Collectors.toList())))
                     .collect(Collectors.toList());
             return filmDTOList;
         } catch (Exception e) {
             throw new ExternalComunicationErrorException("Errore durante la comunicazione con il repository di film", e);
         }
     }
+
 
 
     public List<FilmTitoloAnnoGenereInterpretiPOJO> getTitoloByAnno(String anno) throws ExternalComunicationErrorException {
